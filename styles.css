@@ -26,15 +26,18 @@ body {
   background: var(--color-white);
   padding: 0px;
   width: 40%;
+  height: 700px;
+  border-radius: 20px;
 }
 
-.card img {
+.card #bg-product {
   text-align: center;
   width: 100%;
+  border-radius: 15px 20px 0 0;
 }
 
 .card .product {
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .product h3 {
@@ -61,14 +64,99 @@ body {
 }
 
 .product .price {
-  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.product .origin {
+  text-decoration: line-through;
+  margin-left: 20px;
+  color: var(--color-gray-blue);
+}
+
+.product .actual {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-dark-cyan);
+}
+
+.btn {
   display: flex;
+  background-color: var(--color-dark-cyan);
+  margin-top: 20px;
+  align-items: center;
+  width: 100%;
+  border-radius: 8px;
+  justify-content: center;
+  border: none;
+}
+
+.btn img {
+  width: 20px;
+  margin-right: 20px;
+}
+
+.btn p {
+  color: var(--color-white);
+  font-size: 18px;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 70%;
+    height: 600px;
+  }
+
+  .card #bg-product {
+    grid-column: span 2;
+    content: url("./images/image-product-desktop.jpg");
+    border-radius: 20px 0 0 20px;
+    max-height: 600px;
+  }
+
+  .card .product {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px 40px;
+  }
+
+  .card .product h1 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .card {
+    width: 50%;
+  }
+
+  .card #bg-product {
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .card {
+    width: 40%;
+  }
+
+  .card #bg-product {
+    height: 100%;
+  }
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
